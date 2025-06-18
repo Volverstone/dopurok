@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина</title>
+</head>
+<body>
+    <h1>Ваша корзина</h1>
+    {% if books %}
+        <ul>
+            {% for book in books %}
+                <li>
+                    {{ book.title }}
+                    — <a href="{% url 'cart_remove' book.id %}">Удалить</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'create_order' %}">Перейти к оформлению заказа</a>
+    {% else %}
+        <p>Корзина пуста.</p>
+    {% endif %}
+    <br><a href="{% url 'book_list' %}">← Назад к списку книг</a>
+</body>
+</html>
+аказ</a>

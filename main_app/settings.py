@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -11,10 +12,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
 
 INSTALLED_APPS = [
     'books',
+    'basket',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
