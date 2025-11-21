@@ -1,0 +1,8 @@
+{% extends "tasks/base.html" %}
+{% block content %}
+<h1>{{ task.title }}</h1>
+<p><strong>Категория:</strong> {{ task.category.name }}</p>
+<hr>
+<p>{{ task.description|linebreaks }}</p>
+<a href="{% url 'tasks:list' %}" class="btn btn-secondary mt-3">Назад к списку</a>
+{% endblock %}
